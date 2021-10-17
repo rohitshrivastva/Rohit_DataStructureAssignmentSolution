@@ -6,7 +6,10 @@ import java.util.Scanner;
 
 import com.greatlearning.assignment3.question1.services.SkyScraperServices;
 
-
+/*
+ * Main Driver class for Building Skyscraper program
+ * 
+ */
 public class Driver {
 
 	public static void main(String[] args) {
@@ -20,9 +23,9 @@ public class Driver {
 			int floor = sc.nextInt();
 			floorSizes.add(floor);
 		}
-		
+
 		SkyScraperServices obj = new SkyScraperServices();
-		
+
 		obj.assembleFloors(floorSizes);
 
 		sc.close();

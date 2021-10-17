@@ -3,57 +3,58 @@ package com.greatlearning.assignment3.question2.services;
 import com.greatlearning.assignment3.question2.model.Node;
 
 public class TransactionService {
-	
-	  public static Node prevNode = null;
-	    public static Node headNode = null;
 
-	    /*
-	     * Function to convert the binary
-	     * search tree into a skewed tree in
-	     * increasing  order
-	     */
-	    public void convertBTToRightSkewed(Node root) {
+	private Node prevNode = null;
+	public Node headNode = null;
 
-	        // Base Case
-	        if (root == null) {
-	            return;
-	        }
+	/*
+	 * @description This function covert the Binary Search Tree to Right Skewed tree
+	 * in ascending order
+	 * 
+	 * @param Node root
+	 */
 
-	        //recurse for the left
-	        convertBTToRightSkewed(root.getLeft());
+	public void convertBSTToRightSkewed(Node root) {
 
-	        Node rightNode = root.getRight();
+		// Check for the empty root
+		if (root == null) {
+			return;
+		}
 
+		// recursion to the left
+		convertBSTToRightSkewed(root.getLeft());
 
-	        /*
-	         * Condition to check if the root Node
-	         * of the skewed tree is not defined
-	         */
-	        if (headNode == null) {
-	            headNode = root;
-	            root.setLeft(null);
-	            prevNode = root;
-	        } else {
-	            prevNode.setRight(root);
-	            root.setLeft(null);
-	            prevNode = root;
-	        }
+		Node rightNode = root.getRight();
 
-	        // Similarly recurse for the right
-	        convertBTToRightSkewed(rightNode);
+		/*
+		 * Condition to check if the root Node of the skewed tree is not defined
+		 */
+		if (headNode == null) {
+			headNode = root;
+			root.setLeft(null);
+			prevNode = root;
+		} else {
+			prevNode.setRight(root);
+			root.setLeft(null);
+			prevNode = root;
+		}
 
-	    }
+		// Similarly recursion to the right
+		convertBSTToRightSkewed(rightNode);
 
-	    /*
-	     * Function to traverse the right
-	     * skewed tree using recursion
-	     */
-	    public void traverseRightSkewed(Node root) {
-	        if (root == null) {
-	            return;
-	        }
-	        System.out.print(root.getData() + " ");
-	        traverseRightSkewed(root.getRight());
-	    }
+	}
+
+	/*
+	 * @description This function traverse the right skewed tree using recursion
+	 * 
+	 * @param Node root
+	 */
+	public void traverseRightSkewed(Node root) {
+		if (root == null) {
+			return;
+		}
+		System.out.print(root.getData() + " ");
+		traverseRightSkewed(root.getRight());
+	}
 
 }

@@ -1,36 +1,43 @@
 package com.greatlearning.assignment3.question2.model;
 
+/*
+ * @author Rohit Shrivastva
+ * @description This class creates a tree node
+ * 
+ */
 public class Node {
-    int data;
-    Node left, right;
 
-    public Node(int value) {
-        data = value;
-        left = right = null;
-    }
+	private int data;
+	private Node left;
+	private Node right;
 
-    public int getData() {
-        return data;
-    }
+	public Node(int value) {
+		data = value;
+		left = right = null;
+	}
 
-    public void setData(int data) {
-        this.data = data;
-    }
+	public int getData() {
+		return data;
+	}
 
-    public Node getLeft() {
-        return left;
-    }
+	public void setData(int data) {
+		this.data = data;
+	}
 
-    public void setLeft(Node left) {
-        this.left = left;
-    }
+	public Node getLeft() {
+		return left;
+	}
 
-    public Node getRight() {
-        return right;
-    }
+	public void setLeft(Node left) {
+		this.left = left;
+	}
 
-    public void setRight(Node right) {
-        this.right = right;
-    }
+	public Node getRight() {
+		return right;
+	}
+
+	public void setRight(Node right) {
+		this.right = right;
+	}
 
 }
